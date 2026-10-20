@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The GOAT Status</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0b0c10;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            padding: 2rem;
+            max-width: 600px;
+            z-index: 2;
+        }
+
+        .badge {
+            background: linear-gradient(135deg, #f5af19, #f12711);
+            color: #fff;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 0 20px rgba(245, 175, 25, 0.4);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        h1 span {
+            background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #c5c6c7;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .goat-emoji {
+            font-size: 5rem;
+            animation: float 3s ease-in-out infinite;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* Subtle background glow elements */
+        .glow {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(79, 172, 254, 0.15);
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 1;
+            top: 20%;
+            left: 20%;
+        }
+
+        .glow-2 {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(245, 175, 25, 0.1);
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 1;
+            bottom: 20%;
+            right: 20%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="glow"></div>
+    <div class="glow-2"></div>
+
+    <div class="container">
+        <div class="goat-emoji">🐐</div>
+        <div>
+            <span class="badge">Official Verdict</span>
+        </div>
+        <h1>It's Confirmed.<br><span>You Are The GOAT.</span></h1>
+        <p>The numbers are in, the charts have been analyzed, and the debate is officially over. Your greatness remains unmatched across the board.</p>
+    </div>
+
+</body>
+</html>
