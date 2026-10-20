@@ -22,6 +22,62 @@
             overflow: hidden;
         }
 
+        /* --- MYSTERIOUS OVERLAY SCREEN --- */
+        #mystery-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #050508;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+            transition: opacity 0.8s ease, visibility 0.8s;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        #mystery-screen.fade-out {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .mystery-title {
+            font-size: 2rem;
+            color: #757575;
+            letter-spacing: 4px;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            animation: pulse 2s infinite alternate;
+        }
+
+        .mystery-btn {
+            background: transparent;
+            border: 2px solid #ff3333;
+            color: #ff3333;
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(255, 51, 51, 0.2);
+            transition: all 0.3s ease;
+            animation: jitter 0.5s infinite alternate;
+        }
+
+        .mystery-btn:hover {
+            background: #ff3333;
+            color: #050508;
+            box-shadow: 0 0 30px rgba(255, 51, 51, 0.6);
+            animation-play-state: paused;
+        }
+
+        /* --- GOAT CONTENT SCREEN --- */
         .container {
             text-align: center;
             padding: 2rem;
@@ -70,12 +126,24 @@
             margin-bottom: 1rem;
         }
 
+        /* --- ANIMATIONS --- */
         @keyframes float {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-15px); }
         }
 
-        /* Subtle background glow elements */
+        @keyframes pulse {
+            0% { opacity: 0.4; }
+            100% { opacity: 0.9; text-shadow: 0 0 10px rgba(255,255,255,0.1); }
+        }
+
+        @keyframes jitter {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(-1px, 1px) scale(0.99); }
+            100% { transform: translate(1px, -1px) scale(1.01); }
+        }
+
+        /* Background glows */
         .glow {
             position: absolute;
             width: 300px;
@@ -103,6 +171,13 @@
 </head>
 <body>
 
+    <!-- The Mysterious Gatekeeper Screen -->
+    <div id="mystery-screen">
+        <div class="mystery-title">Your ultimate baseline reality is loading...</div>
+        <button class="mystery-btn" onclick="revealGoat()">ohhh what am i gonna be im scared</button>
+    </div>
+
+    <!-- Main Content Hidden Underneath -->
     <div class="glow"></div>
     <div class="glow-2"></div>
 
@@ -114,6 +189,13 @@
         <h1>It's Confirmed.<br><span>You Are The GOAT.</span></h1>
         <p>The numbers are in, the charts have been analyzed, and the debate is officially over. Your greatness remains unmatched across the board.</p>
     </div>
+
+    <script>
+        function revealGoat() {
+            const overlay = document.getElementById('mystery-screen');
+            overlay.classList.add('fade-out');
+        }
+    </script>
 
 </body>
 </html>
